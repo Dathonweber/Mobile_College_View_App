@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LAP1WGUApp.AddTestPage">
+    <StackLayout>
+        <TableView x:Name="EditTestView" Intent="Form">
+            <TableSection Title="Assessment Information">
+                <EntryCell x:Name="AssessmentIDCell" Label="Assessment ID:" Keyboard="Numeric"/>
+                <EntryCell x:Name="AssessmentNameCell" Label="Assessment Name:" Keyboard="Default"/>
+                <EntryCell x:Name="AssessmentInfoCell" Label="Assessment Info: " />
+            </TableSection>
+        </TableView>
+        <Label Text="Assessment Date" FontSize="Medium"/>
+        <DatePicker x:Name="StartDate">
+            <DatePicker.MinimumDate>
+                01/01/1900
+            </DatePicker.MinimumDate>
+            <DatePicker.MaximumDate>
+                12/31/2100
+            </DatePicker.MaximumDate>
+        </DatePicker>
+
+        <Label Text="Assessment Time:" FontSize="Medium"/>
+        <TimePicker x:Name="StartTime"/>
+
+        <Label Text="Assessment Type:" FontSize="Medium"/>
+        <Picker x:Name="TypePicker"/>
+
+        <Button x:Name="SaveTestInfoBtn" Text="Save" Clicked="SaveTestInfoBtn_Clicked"/>
+
+    </StackLayout>
+</ContentPage>

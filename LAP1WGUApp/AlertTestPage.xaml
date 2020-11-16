@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LAP1WGUApp.AlertTestPage">
+    <StackLayout x:Name="TestAlertView">
+        <Label Text="Set Alerts For your upcoming Assessment." FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center"/>
+        <DatePicker x:Name="DatePicker"></DatePicker>
+        <TimePicker x:Name="TimePicker"></TimePicker>
+        <Button x:Name="SetAlertBtn" Text="Set Alert" Clicked="SetAlertBtn_Clicked"/>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LAP1WGUApp.CoursePage">
+    <StackLayout x:Name="CoursesPage">
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Start">
+            <Button x:Name="DeleteTermBtn"  Clicked="DeleteTermBtn_Clicked" HorizontalOptions="Start" VerticalOptions="Center" Text="Delete Term"/>
+            <Label Text="Term Information" FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"/>
+            <Button x:Name="EditTermBtn" Clicked="EditTermBtn_Clicked" HorizontalOptions="End" VerticalOptions="Center" Text="Edit Term Info"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Start Date: " VerticalTextAlignment="Center" />
+            <DatePicker x:Name="StartDate" IsEnabled="False"/>
+            <Label Text="End Date: " VerticalTextAlignment="Center"/>
+            <DatePicker x:Name="EndDate" IsEnabled="False"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Courses" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
+            <Button x:Name="AddCourseBtn" Clicked="AddCourseBtn_Clicked" Text="Add Course" HorizontalOptions="EndAndExpand"/>
+        </StackLayout>
+        <ListView x:Name="CoursesList" ItemTapped="CoursesList_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding CourseName}" TextColor="Black"
+                              Detail="{Binding CourseDate}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

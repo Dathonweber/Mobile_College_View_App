@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LAP1WGUApp.EditCIInfoPage">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center">
+            <TableView x:Name="EditCIInfoView" Intent="Form" HorizontalOptions="Center">
+                <TableSection Title="Course Instructor Information" TextColor="Black">
+                    <EntryCell x:Name="Name" Label="Name:"  Keyboard="Plain"/>
+                    <EntryCell x:Name="PhoneNumber" Label="Phone Number:"  Keyboard="Telephone"/>
+                    <EntryCell x:Name="Email" Label="Email:" Keyboard="Email"/>
+                </TableSection>
+            </TableView>
+            <Button x:Name="EditCIInfoBtn" Text="Save" Clicked="EditCIInfoBtn_Clicked" HorizontalOptions="Center"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LAP1WGUApp.EditCoursePage">
+    <StackLayout>
+        <TableView x:Name="AddCourseView" Intent="Form">
+            <TableSection Title="Course Information" TextColor="Black">
+                <EntryCell x:Name="CourseIDCell" Label="Course ID:"  Keyboard="Numeric"/>
+                <EntryCell x:Name="TermIDCell" Label="Term ID:" IsEnabled="False"/>
+                <EntryCell x:Name="CourseNameCell" Label="Course Name:" Keyboard="Default"/>
+                <EntryCell x:Name="CourseViewCell" Label="Detailed Course View:" Keyboard="Default"/>
+                <EntryCell x:Name="CourseNotesCell" Label="Optional Course Notes:" Keyboard="Default"/>
+            </TableSection>
+        </TableView>
+        <Label Text="Course Start Date:" TextColor="#131321" FontSize="Medium" FontAttributes="Bold"/>
+        <DatePicker x:Name="CourseStartDate">
+            <DatePicker.MinimumDate>
+                01/01/1900
+            </DatePicker.MinimumDate>
+            <DatePicker.MaximumDate>
+                12/31/2100
+            </DatePicker.MaximumDate>
+        </DatePicker>
+
+        <Label Text="Coruse End Date:" TextColor="#131321" FontSize="Medium" FontAttributes="Bold"/>
+        <DatePicker x:Name="CourseEndDate">
+            <DatePicker.MinimumDate>
+                01/01/1900
+            </DatePicker.MinimumDate>
+            <DatePicker.MaximumDate>
+                12/31/2100
+            </DatePicker.MaximumDate>
+        </DatePicker>
+
+        <Label Text="Course Status:" TextColor="#131321" FontSize="Medium" FontAttributes="Bold"/>
+        <Picker x:Name="CourseStatusPicker"/>
+
+        <Button x:Name="EditCIBtn" Text="Edit Course Instructor Info" Clicked="EditCIBtn_Clicked"/>
+        <Button x:Name="SaveCourseBtn" Text="Save" Clicked="SaveCourseBtn_Clicked"/>
+    </StackLayout>
+</ContentPage>

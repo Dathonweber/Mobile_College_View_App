@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LAP1WGUApp.MainPage">
+    
+  <StackLayout x:Name="MainPageXAML">
+        <Image HorizontalOptions="Center" WidthRequest="100" HeightRequest="100">
+            <Image.Source>
+                <OnPlatform x:TypeArguments="FileImageSource"
+                            iOS="WGU.jpeg"
+                            Android="WGU.jpeg"
+                            WinPhone="Images/WGU.jpeg"/>
+            </Image.Source>
+        </Image>
+        <Button x:Name="AddTermBtn" Text="Add Term"/>
+        <ListView x:Name="TermsView"  ItemTapped="TermsView_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding TermName}" TextColor="Black" 
+                              Detail="{Binding CourseDate}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

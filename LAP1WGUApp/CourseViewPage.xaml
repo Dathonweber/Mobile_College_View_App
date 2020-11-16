@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LAP1WGUApp.CourseViewPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="CourseAlertBtn" Text="&#128276;" Clicked="CourseAlertBtn_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <StackLayout x:Name="courseView">
+                
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Start"  Padding="5" x:Name="courseStatusView">
+            <Button x:Name="DeleteCourseBtn"  Clicked="DeleteCourseBtn_Clicked" HorizontalOptions="Start" VerticalOptions="Center" Text="Delete Course"/>
+                    <Label Text="{Binding CourseStatus}" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"/>
+                    <Button x:Name="EditCourse" Clicked="EditCourse_Clicked" HorizontalOptions="End" VerticalOptions="Center" Text="Edit Course Info"/>
+        </StackLayout>
+
+        
+        
+        <StackLayout  x:Name="courseInstructor" Spacing="10">
+            <Label Text="Course Instructor Information" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center"/>
+            <Label Text="{Binding Name}" HorizontalOptions="Center"/>
+            <Label Text="{Binding PhoneNumber}" HorizontalOptions="Center"/>
+            <Label Text="{Binding Email}" HorizontalOptions="Center"/>
+        </StackLayout>
+
+        
+        
+        <StackLayout Padding="10" x:Name="CourseInfoView">
+            <Label Text="About This Course" HorizontalOptions="CenterAndExpand" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+            <Label Text="{Binding DetailedCourseView}"/>
+            <Label Text="Optional Notes" HorizontalOptions="Center" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+            <Label Text="{Binding CourseNotes}"/>
+            <Button x:Name="NotesShareBtn" Text="Share Notes" Clicked="NotesShareBtn_Clicked" HorizontalOptions="Center" HeightRequest="40" WidthRequest="140"/>
+            <Label Text="Course Due Date" FontSize="Default" FontAttributes="Bold" HorizontalOptions="Center"/>
+            <Label Text="{Binding EndDate, StringFormat='{0:MMMM dd yyyy}'}" HorizontalOptions="Center" FontSize="Default"/>
+        </StackLayout>
+
+
+        
+  
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Assessments" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="StartAndExpand"/>
+            <Button x:Name="AddAssessmentBtn" Clicked="AddAssessmentBtn_Clicked" Text="Add Assessment" HorizontalOptions="Center"/>
+        </StackLayout>
+        
+        
+        
+        <ListView x:Name="AssessmentsList" ItemSelected="AssessmentsList_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding AssessmentName}" TextColor="Black"
+                              Detail="{Binding AssessmentDate, StringFormat='{0:MMMM dd}'}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+        
+        
+    </StackLayout>
+</ContentPage>
